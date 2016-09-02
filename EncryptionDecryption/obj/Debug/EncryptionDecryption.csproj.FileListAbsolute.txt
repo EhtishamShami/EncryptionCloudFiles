@@ -1,0 +1,9 @@
+c:\users\shami\documents\visual studio 2015\Projects\EncryptionDecryption\EncryptionDecryption\bin\Debug\EncryptionDecryption.exe.config
+c:\users\shami\documents\visual studio 2015\Projects\EncryptionDecryption\EncryptionDecryption\obj\Debug\EncryptionDecryption.csprojResolveAssemblyReference.cache
+c:\users\shami\documents\visual studio 2015\Projects\EncryptionDecryption\EncryptionDecryption\obj\Debug\EncryptionDecryption.Form1.resources
+c:\users\shami\documents\visual studio 2015\Projects\EncryptionDecryption\EncryptionDecryption\obj\Debug\EncryptionDecryption.Properties.Resources.resources
+c:\users\shami\documents\visual studio 2015\Projects\EncryptionDecryption\EncryptionDecryption\obj\Debug\EncryptionDecryption.csproj.GenerateResource.Cache
+c:\users\shami\documents\visual studio 2015\Projects\EncryptionDecryption\EncryptionDecryption\bin\Debug\EncryptionDecryption.exe
+c:\users\shami\documents\visual studio 2015\Projects\EncryptionDecryption\EncryptionDecryption\bin\Debug\EncryptionDecryption.pdb
+c:\users\shami\documents\visual studio 2015\Projects\EncryptionDecryption\EncryptionDecryption\obj\Debug\EncryptionDecryption.exe
+c:\users\shami\documents\visual studio 2015\Projects\EncryptionDecryption\EncryptionDecryption\obj\Debug\EncryptionDecryption.pdb

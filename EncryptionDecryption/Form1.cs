@@ -14,16 +14,18 @@ namespace EncryptionDecryption
 {
     public partial class Form1 : Form
     {
+        string original;
         public Form1()
         {
             InitializeComponent();
+            original = "";
         }
-
+     
         private void button1_Click(object sender, EventArgs e)
         {
             /////Credit goes to msdn.com
             try {
-                string original = File.ReadAllText("text.txt"); 
+                
                 using (TripleDESCryptoServiceProvider tripledes=new TripleDESCryptoServiceProvider())
                 {
                     ////I am Encrpyting the string original to array of bytes
@@ -130,6 +132,43 @@ namespace EncryptionDecryption
             }
 
             return plaintext;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "Text Files (.txt)|*.txt|All Files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.Multiselect = false;   ////T select multiple file set it to true i am seleccting it to false
+           
+            if (openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream=openFileDialog1.OpenFile())!=null)
+                    {
+                        using (StreamReader reader=new StreamReader(myStream))
+                        {
+                            // Read the first line from the file and write it the textbox.
+                            original = reader.ReadLine();
+                        }
+
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+
+            }
+
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

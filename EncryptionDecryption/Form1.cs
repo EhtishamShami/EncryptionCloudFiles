@@ -32,8 +32,12 @@ namespace EncryptionDecryption
                     byte[] encrypted = EncryptStringToBytes(original, tripledes.Key, tripledes.IV);
                     ////Now its time to roll back the encryption and decryption
                     File.WriteAllBytes("encrypted",encrypted);
+                    Byte[] key = tripledes.Key;
+                    File.WriteAllBytes("key",key);
+                    Byte[] tripledesIV = tripledes.IV;
+                    File.WriteAllBytes("tripledesIV", tripledesIV);
                     encrypted = File.ReadAllBytes("encrypted");
-                    string roundtrip = DecryptBytesToString(encrypted, tripledes.Key, tripledes.IV);
+                    string roundtrip = DecryptBytesToString(encrypted, key, tripledesIV);
                     MessageBox.Show("Original "+original+" Round trip "+roundtrip);
                 }
 
@@ -169,6 +173,18 @@ namespace EncryptionDecryption
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (TripleDESCryptoServiceProvider tripledes = new TripleDESCryptoServiceProvider())
+            {
+                Byte[] encrypted = File.ReadAllBytes("encrypted");
+                Byte[] key = File.ReadAllBytes("key");
+                Byte[] tripledesIV = File.ReadAllBytes("tripledesIV");
+                string roundtrip = DecryptBytesToString(encrypted, key, tripledesIV);
+                MessageBox.Show("Original " + original + " Round trip " + roundtrip);
+            }
         }
     }
 }
